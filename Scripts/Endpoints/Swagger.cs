@@ -6,7 +6,7 @@ namespace App.Endpoints;
 public class Swagger : IEndpointDefinition {
     void IEndpointDefinition.DefineEndpoints(WebApplication app) {
         _ = app.UseSwagger();
-        _ = app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "gocator-server"));
+        _ = app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core Server"));
     }
 
     void IEndpointDefinition.DefineServices(IServiceCollection services) {
