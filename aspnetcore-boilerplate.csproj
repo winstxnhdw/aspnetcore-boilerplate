@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+
+    <Configuration Condition=" '$(Configuration)' == 'Debug' ">Release</Configuration>
+    <PublishDir>dist</PublishDir>
+    <TargetFramework>net7.0</TargetFramework>
+    <AssemblyName>Server</AssemblyName>
+
+  </PropertyGroup>
+
+  <Target Name="CleanBeforeRestore" BeforeTargets="Restore">
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+    <RemoveDir Directories="$(BaseOutputPath)" />
+    <RemoveDir Directories="$(PublishDir)" />
+  </Target>
+
+  <ItemGroup>
+
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+
+  </ItemGroup>
+
+</Project>
