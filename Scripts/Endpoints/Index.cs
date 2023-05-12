@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace App.Endpoints;
 
-public class Gocator : Connection, IEndpointDefinition {
+public class Index : Connection, IEndpointDefinition {
     internal IResult Index() {
         return Results.Ok("Hello World!");
     }
@@ -20,7 +20,7 @@ public class Gocator : Connection, IEndpointDefinition {
     }
 
     public void DefineServices(IServiceCollection services) {
-        _ = services.AddSingleton<Gocator>();
+        _ = services.AddSingleton<Index>();
         _ = services.AddHttpClient();
     }
 }
